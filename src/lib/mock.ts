@@ -1,6 +1,5 @@
 import type { RoadmapYear } from "../types/roadmap";
 
-// Sample data
 export const roadmapYears: RoadmapYear[] = [
   {
     year: "2024",
@@ -8,30 +7,30 @@ export const roadmapYears: RoadmapYear[] = [
       {
         id: "2024-q1",
         quarter: "Q1",
-        title: "Foundation & Planning",
+        title: "E-commerce Platform & Sourcing",
         description:
-          "Establish core infrastructure, define project scope, and set up development environment with initial team onboarding.",
+          "Establish core e-commerce infrastructure, finalize product designs, and secure supply chain partnerships for apparel.",
       },
       {
         id: "2024-q2",
         quarter: "Q2",
-        title: "Core Development",
+        title: "Official Launch & Initial Marketing",
         description:
-          "Build essential features, implement user authentication, and develop the main application architecture.",
+          "Execute the official website launch, begin initial product sales, and initiate digital marketing campaigns on social media platforms.",
       },
       {
         id: "2024-q3",
         quarter: "Q3",
-        title: "Feature Enhancement",
+        title: "Partnership & Product Line Expansion",
         description:
-          "Add advanced functionality, integrate third-party services, and optimize performance across all platforms.",
+          "Develop new collaboration opportunities with athletes and brands, and release new apparel collections to expand product offerings.",
       },
       {
         id: "2024-q4",
         quarter: "Q4",
-        title: "Launch & Optimization",
+        title: "Customer Experience & Optimization",
         description:
-          "Final testing, deployment preparation, launch execution, and post-launch monitoring and improvements.",
+          "Enhance the website's user interface and experience, and implement a customer loyalty program to increase retention.",
       },
     ],
   },
@@ -41,31 +40,31 @@ export const roadmapYears: RoadmapYear[] = [
       {
         id: "2025-q1",
         quarter: "Q1",
-        title: "Market Expansion",
+        title: "Market Growth & Brand Awareness",
         description:
-          "Scale operations, expand to new markets, and implement advanced analytics and reporting features.",
+          "Expand brand reach through targeted advertising and influencer collaborations, and explore new marketing channels.",
       },
       {
         id: "2025-q2",
         quarter: "Q2",
-        title: "AI Integration",
+        title: "Data Analytics & Personalization",
         description:
-          "Integrate artificial intelligence capabilities, implement machine learning models, and enhance user experience.",
+          "Integrate advanced analytics to understand customer behavior and implement personalized product recommendations on the website.",
       },
       {
         id: "2025-q3",
         quarter: "Q3",
-        title: "Mobile Excellence",
+        title: "Innovative Features & Technology",
         description:
-          "Develop native mobile applications, optimize mobile experience, and implement offline capabilities.",
+          "Explore new technologies such as augmented reality for a virtual try-on experience or AI for inventory management.",
       },
       {
         id: "2025-q4",
         quarter: "Q4",
-        title: "Innovation & Growth",
+        title: "Community Building & Brand Loyalty",
         description:
-          "Research emerging technologies, implement innovative features, and prepare for next phase of growth.",
+          "Strengthen the brand community through exclusive events, user-generated content campaigns, and advanced loyalty rewards.",
       },
     ],
   },
-]
+];
