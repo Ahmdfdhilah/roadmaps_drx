@@ -38,5 +38,5 @@ export const getQuarterColor = (isActive: boolean) => {
   if (isActive) {
     return "fill-primary"
   }
-  return "fill-secondary hover:fill-accent"
+  return "hover:fill-primary"
 }

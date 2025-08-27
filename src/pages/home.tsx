@@ -9,7 +9,7 @@ export function Home() {
                 <img
                     src={logo}
                     alt="Logo"
-                    className="w-60"
+                    className="w-50 lg:w-60"
                 />
 
                 {/* Judul */}
