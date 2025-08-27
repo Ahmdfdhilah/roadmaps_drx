@@ -13,32 +13,31 @@ export default function InteractiveRoadmap() {
     const activeQuarterData = currentYearData.find((item) => item.quarter === activeQuarter)
     const quarters = ["Q1", "Q2", "Q3", "Q4"]
 
-    // SVG configuration - adjusted for left to right layout
+    // SVG configuration 
     const svgWidth = 1080
     const svgHeight = 200
     const cx = svgWidth / 2
     const cy = 50
     const outerR = 140
     const innerR = 70
-    
+
     const totalAngle = Math.PI // 180 degrees semicircle
     const segmentAngle = totalAngle / 4 // 45 degrees per segment
     const startOffset = Math.PI // Start from left (180 degrees)
 
     return (
-        <div className="w-full mx-auto p-6">
+        <div className="w-full mx-auto">
             {/* Year Dropdown */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center absolute left-1/2 top-1/4 -translate-x-1/2 z-999">
                 <Select value={selectedYear} onValueChange={setSelectedYear}>
-                    <SelectTrigger className="w-32 px-3 py-2 text-sm font-medium border rounded-xl shadow-sm bg-white hover:bg-gray-500 transition-all duration-200 focus:ring-2 focus:ring-primary focus:outline-none">
+                    <SelectTrigger >
                         <SelectValue placeholder="Pilih Tahun" />
                     </SelectTrigger>
-                    <SelectContent className="rounded-xl shadow-md border bg-white">
+                    <SelectContent>
                         {roadmapYears.map((year) => (
                             <SelectItem
                                 key={year.year}
                                 value={year.year}
-                                className="cursor-pointer px-3 py-2 text-sm hover:bg-primary/20 rounded-md transition-colors"
                             >
                                 {year.year}
                             </SelectItem>
@@ -48,7 +47,7 @@ export default function InteractiveRoadmap() {
             </div>
 
             {/* Quarter Selector (Semicircle) */}
-            <div className="flex justify-center mb-8 relative">
+            <div className="flex justify-center mb-2 relative">
                 <svg
                     className="w-full min-w-3xl"
                     viewBox={`0 0 ${svgWidth} ${svgHeight + 100}`}
@@ -67,19 +66,19 @@ export default function InteractiveRoadmap() {
                         const outerY = cy + outerR * Math.sin(midAngle)
 
                         // Extended line points for better visual connection
-                        const extendDistance = 40
+                        const extendDistance = 30
                         const extendedX = cx + (outerR + extendDistance) * Math.cos(midAngle)
                         const extendedY = cy + (outerR + extendDistance) * Math.sin(midAngle)
 
                         // Determine line endpoint based on quarter position (left to right)
                         let lineEndX, lineEndY
                         const positions = [
-                            { x: svgWidth * 0.15, y: svgHeight + 70 }, // Q1 - far left
+                            { x: svgWidth * 0.20, y: svgHeight + 70 }, // Q1 - far left
                             { x: svgWidth * 0.38, y: svgHeight + 85 }, // Q2 - left-center
                             { x: svgWidth * 0.62, y: svgHeight + 85 }, // Q3 - right-center
-                            { x: svgWidth * 0.85, y: svgHeight + 70 }  // Q4 - far right
+                            { x: svgWidth * 0.80, y: svgHeight + 70 }  // Q4 - far right
                         ]
-                        
+
                         lineEndX = positions[index].x
                         lineEndY = positions[index].y
 
@@ -92,8 +91,8 @@ export default function InteractiveRoadmap() {
                                     x2={extendedX}
                                     y2={extendedY}
                                     className={`transition-all duration-300 ${isActive
-                                            ? "stroke-primary stroke-2 opacity-100"
-                                            : "stroke-gray-500 stroke-1 opacity-50"
+                                        ? "stroke-primary stroke-2 opacity-100"
+                                        : "stroke-gray-500 stroke-1 opacity-50"
                                         }`}
                                 />
 
@@ -104,8 +103,8 @@ export default function InteractiveRoadmap() {
                                     x2={lineEndX}
                                     y2={lineEndY}
                                     className={`transition-all duration-300 ${isActive
-                                            ? "stroke-primary stroke-2 opacity-80"
-                                            : "stroke-gray-500 stroke-1 opacity-30"
+                                        ? "stroke-primary stroke-2 opacity-80"
+                                        : "stroke-gray-500 stroke-1 opacity-30"
                                         }`}
                                     strokeDasharray="5,5"
                                 />
@@ -116,8 +115,8 @@ export default function InteractiveRoadmap() {
                                     cy={lineEndY}
                                     r="4"
                                     className={`transition-all duration-300 ${isActive
-                                            ? "fill-primary opacity-100"
-                                            : "fill-gray-500 opacity-50"
+                                        ? "fill-primary opacity-100"
+                                        : "fill-gray-500 opacity-50"
                                         }`}
                                 />
 
@@ -154,8 +153,8 @@ export default function InteractiveRoadmap() {
                                     textAnchor="middle"
                                     dominantBaseline="middle"
                                     className={`text-xs font-semibold transition-all duration-300 pointer-events-none select-none ${isActive
-                                            ? "fill-primary opacity-100"
-                                            : "fill-gray-500 opacity-70"
+                                        ? "fill-primary opacity-100"
+                                        : "fill-gray-500 opacity-70"
                                         }`}
                                 >
                                     {quarter}
