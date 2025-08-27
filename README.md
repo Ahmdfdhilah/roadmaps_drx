@@ -1,69 +1,66 @@
-# React + TypeScript + Vite
+# Roadmap Interaktif DRX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah aplikasi web React yang menampilkan peta jalan (roadmap) interaktif. Pengguna dapat memilih tahun dan melihat detail untuk setiap kuartal. Aplikasi ini dibangun dengan Vite, TypeScript, dan Tailwind CSS.
 
-Currently, two official plugins are available:
+## Prasyarat
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pastikan Anda memiliki Node.js dan npm (atau Yarn/pnpm) yang terinstal di sistem Anda.
 
-## Expanding the ESLint configuration
+## Instalasi
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Kloning Repositori:**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    ```bash
+    git clone [URL_REPOSITORI](https://github.com/Ahmdfdhilah/roadmaps_drx.git)
+    cd roadmaps_drx
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2.  **Instal Dependensi:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    npm install
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Skrip yang Tersedia
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  * **Menjalankan Aplikasi (Mode Pengembangan):**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    npm run dev
+    ```
+
+    Membuka aplikasi di [http://localhost:5173](http://localhost:5173).
+
+  * **Membangun Aplikasi (Mode Produksi):**
+
+    ```bash
+    npm run build
+    ```
+
+    Membangun aplikasi untuk produksi di dalam direktori `dist`.
+
+  * **Menjalankan Lint:**
+
+    ```bash
+    npm run lint
+    ```
+
+    Memeriksa kesalahan linting di dalam kode.
+
+  * **Pratinjau Build Produksi:**
+
+    ```bash
+    npm run preview
+    ```
+
+    Menjalankan server lokal untuk pratinjau build produksi.
+
+## Teknologi yang Digunakan
+
+  * **Framework:** React
+  * **Bahasa:** TypeScript
+  * **Build Tool:** Vite
+  * **Styling:** Tailwind CSS
+  * **Animasi:** Framer Motion
+  * **Linting:** ESLint
+  *  **UI:** Shadcn
